@@ -22,8 +22,8 @@ dependencyResolutionManagement {
 rootProject.name = "Android Demo"
 include ':app'
 include('core')
-project(':core').projectDir = file('../../IdeaProjects/sealEngine_3M/core')
+project(':core').projectDir = file('../sealEngine_3M/core')
 include('android')
-project(':android').projectDir = file('../../IdeaProjects/sealEngine_3M/android')
+project(':android').projectDir = file('../sealEngine_3M/android')
 include ('game')
-project(':game').projectDir = file('../../IdeaProjects/sealEngine_3M/Demo/game')
+project(':game').projectDir = file('../Demo/game')
