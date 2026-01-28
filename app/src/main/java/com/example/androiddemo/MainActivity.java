@@ -14,8 +14,9 @@ import androidx.core.view.WindowInsetsCompat;
 
 import com.nikitos.Engine;
 import com.nikitos.MainRenderer;
-import com.seal.gl_engine.AndroidLauncher;
-import com.seal.gl_engine.AndroidLauncherParams;
+import com.seal.gl_engine.platform.AndroidLauncher;
+import com.seal.gl_engine.platform.AndroidLauncherParams;
+
 
 public class MainActivity extends AppCompatActivity {
     Engine engine;
