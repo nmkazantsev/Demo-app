@@ -1,6 +1,5 @@
 package com.example.androiddemo;
 
-import android.content.pm.ActivityInfo;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +10,7 @@ import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.nikitos.Engine;
+import com.nikitos.GamePageClass;
 import com.nikitos.MainRenderer;
 import com.seal.gl_engine.platform.AndroidLauncher;
 import com.seal.gl_engine.platform.AndroidLauncherParams;
@@ -20,10 +20,11 @@ public class MainActivity extends AppCompatActivity {
     Engine engine;
     GLSurfaceView v;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.e("print", "on create" + savedInstanceState);
+        Log.i("activity", "on create " + savedInstanceState);
         AndroidLauncherParams androidLauncherParams = new AndroidLauncherParams(getApplicationContext())
                 .setDebug(true)
                 .setLandscape(true)
