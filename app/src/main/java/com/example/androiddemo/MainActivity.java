@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("activity", "on create " + savedInstanceState);
         AndroidLauncherParams androidLauncherParams = new AndroidLauncherParams(getApplicationContext())
                 .setDebug(true)
-                .setLandscape(true)
                 .setStartPage(unused -> new MainRenderer())
                 .setMSAA(true);
 
