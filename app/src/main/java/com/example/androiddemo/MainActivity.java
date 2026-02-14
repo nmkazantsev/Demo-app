@@ -1,8 +1,10 @@
 package com.example.androiddemo;
 
+import android.annotation.SuppressLint;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -12,15 +14,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.nikitos.Engine;
 import com.nikitos.GamePageClass;
 import com.nikitos.MainRenderer;
+import com.nikitos.main.touch.TouchProcessor;
 import com.seal.gl_engine.platform.AndroidLauncher;
 import com.seal.gl_engine.platform.AndroidLauncherParams;
+import com.seal.gl_engine.touch.AndroidMotionEventAdapter;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnTouchListener{
     Engine engine;
     GLSurfaceView v;
 
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         v = androidLauncher.launch();
         //}
         setContentView(v);
+        v.setOnTouchListener(this);
     }
 
 
@@ -57,5 +63,17 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         Log.i("print", "on resume");
         engine.onResume();
+    }
+
+    @SuppressLint("ClickableViewAccessibility")
+    @Override
+    public boolean onTouch(View v, MotionEvent event) {
+         TouchProcessor.onTouch( new AndroidMotionEventAdapter(event));
+         return true;
+    }
+
+    @Override
+    public void onPointerCaptureChanged(boolean hasCapture) {
+        super.onPointerCaptureChanged(hasCapture);
     }
 }
