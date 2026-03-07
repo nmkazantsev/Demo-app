@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     @SuppressLint("ClickableViewAccessibility")
     @Override
     public boolean onTouch(View v, MotionEvent event) {
-         TouchProcessor.onTouch( new AndroidMotionEventAdapter(event));
+         TouchProcessor.onTouch(new AndroidMotionEventAdapter(event));
          return true;
     }
 
