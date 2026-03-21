@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         super.onCreate(savedInstanceState);
         Log.i("activity", "on create " + savedInstanceState);
         AndroidLauncherParams androidLauncherParams = new AndroidLauncherParams(getApplicationContext())
-                .setDebug(true)
+                .setDebug(false)
                 .setStartPage(unused -> new MainRenderer())
                 .setMSAA(true);
 
