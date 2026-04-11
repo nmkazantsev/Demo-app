@@ -30,19 +30,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    packaging {
-        resources {
-            // Вариант 1 (рекомендуемый): Использовать первый найденный экземпляр файла
-            pickFirsts.add('fragment_shader.glsl')
-            pickFirsts.add('vertex_shader.glsl')
-
-            // ИЛИ Вариант 2: Исключить дубликат из одного из модулей, если он не нужен
-            // excludes.add('/fragment_shader.glsl')
-
-            // ИЛИ Вариант 3: Объединить все экземпляры файла (если они должны быть соединены)
-            // merges.add('fragment_shader.glsl')
-        }
-    }
 }
 
 dependencies {
