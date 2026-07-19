@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         AndroidLauncherParams androidLauncherParams = new AndroidLauncherParams(getApplicationContext())
                 .setDebug(false)
                 .setStartPage(unused -> new MainRenderer())
+                .setUseBSOD(true)
                 .setMSAA(true);
 
         AndroidLauncher androidLauncher = new AndroidLauncher(androidLauncherParams);
